@@ -11,17 +11,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './character-details.component.html',
   styleUrls: ['./character-details.component.css']
 })
-export class CharacterDetailsComponent implements OnInit {
-  public character?: string;
+export class CharacterDetailsComponent{
+  private character: string;
   character$?: Observable<Character>;
 
   constructor(private route: ActivatedRoute, public charactersService: CharactersService, private router: Router) {
-
+    this.character = this.route?.snapshot?.params['characterId'];
+    this.character$ = this.charactersService?.getCharacter(this?.character);
+    
   }
 
-  ngOnInit() {
-    this.character = this.route.snapshot.params['characterId']
-    this.character$ = this.charactersService?.getCharacter(this.character);
-  }
 
 }

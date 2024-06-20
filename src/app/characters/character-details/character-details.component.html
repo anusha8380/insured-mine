@@ -1,4 +1,4 @@
-<mat-grid-list cols="'2'" rowHeight="1:1">
+<mat-grid-list cols="2" rowHeight="1:1">
   <mat-grid-tile>
     <mat-card *ngIf="(character$ | async) as chac" class="mat-card">
       <img mat-card-image
@@ -22,7 +22,7 @@
 
     </mat-card>
   </mat-grid-tile>
-  <mat-grid-list>
+  <mat-grid-tile>
     <mat-card *ngIf="(character$ | async) as chac" class="mat-card">
       <mat-card-title style="text-align: center;color: #37be5fff;">Films</mat-card-title>
       <mat-card class="mat-card">
@@ -45,7 +45,7 @@
 
 
     </mat-card>
-  </mat-grid-list>
+  </mat-grid-tile>
 
 
 </mat-grid-list>
