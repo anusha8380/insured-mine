@@ -1,0 +1,51 @@
+<mat-grid-list cols="'2'" rowHeight="1:1">
+  <mat-grid-tile>
+    <mat-card *ngIf="(character$ | async) as chac" class="mat-card">
+      <img mat-card-image
+        src="https://www.shutterstock.com/image-vector/internet-outline-icon-vector-600w-2180345703.jpg"
+        alt="Photo of a globe">
+      <mat-card-content>
+        Name:&nbsp;{{chac.name}}<br>
+        SkywalkerBorn:&nbsp;{{chac.birth_year}} <br>
+        Gender:&nbsp;{{chac?.gender}} <br>
+        Height:&nbsp; {{chac?.height}} <br>
+        Weight:&nbsp; {{chac?.mass}} <br>
+        Created at:&nbsp; {{chac?.created|date: 'full'}}<br>
+        Edited at:&nbsp;{{chac?.edited | date:'full'}} <br>
+        Hair color:&nbsp;{{chac?.hair_color}} <br>
+        Eye color:&nbsp;{{chac?.eye_color}} <br>
+        Skin color:&nbsp;{{chac?.skin_color}} <br>
+        Planet name:
+        <br>
+        Species:{{chac?.species}}
+      </mat-card-content>
+
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-list>
+    <mat-card *ngIf="(character$ | async) as chac" class="mat-card">
+      <mat-card-title style="text-align: center;color: #37be5fff;">Films</mat-card-title>
+      <mat-card class="mat-card">
+        <mat-card-content>
+          {{chac.films | json}}
+        </mat-card-content>
+      </mat-card>
+      <mat-card-title style="text-align: center;color: #37be5fff;">Vehicles</mat-card-title>
+      <mat-card class="mat-card">
+        <mat-card-content>
+          {{chac.vehicles | json}}
+        </mat-card-content>
+      </mat-card>
+      <mat-card-title style="text-align: center;color: #37be5fff;">Starships</mat-card-title>
+      <mat-card class="mat-card">
+        <mat-card-content>
+          {{chac.starships | json}}
+        </mat-card-content>
+      </mat-card>
+
+
+    </mat-card>
+  </mat-grid-list>
+
+
+</mat-grid-list>

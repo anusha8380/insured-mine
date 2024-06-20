@@ -1,0 +1,7 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .text{
+    font-size: x-small; 
+    margin-top: 40px;
+  }
